@@ -1,0 +1,15 @@
+{
+  "name": "@saroamirkhanyan/ranges",
+  "version": "1.0.0",
+  "description": "TypeScript library for ranges",
+  "main": "dist/ranges.js",
+  "types": "dist/ranges.d.ts",
+  "author": "Saro Amirkhanyan",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc"
+  },
+  "devDependencies": {
+    "typescript": "^4.9.5"
+  }
+}
