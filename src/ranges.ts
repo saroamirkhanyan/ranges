@@ -50,8 +50,8 @@ export const drop = <A>(n: number) =>
     );
 
 export function fold<A>(M: Monoid<A>) {
-    let result = M.empty;
     return function* (iterable: Iterable<A>): Iterable<A> {
+        let result = M.empty;
         for (const a of iterable) {
             result = M.concat(result, a);
         }
