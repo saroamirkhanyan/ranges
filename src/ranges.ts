@@ -49,6 +49,9 @@ export const drop = <A>(n: number) =>
         map(([a]: [A, number]) => a)
     );
 
+export const head = take(1);
+export const tail = drop(1);
+
 export function fold<A>(M: Monoid<A>) {
     return function* (iterable: Iterable<A>): Iterable<A> {
         let result = M.empty;
@@ -56,6 +59,12 @@ export function fold<A>(M: Monoid<A>) {
             result = M.concat(result, a);
         }
         yield result;
+    };
+}
+
+export function unwrap<A>() {
+    return function (iterable: Iterable<A>): A {
+        for (const a of iterable) return a;
     };
 }
 
