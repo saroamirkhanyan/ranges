@@ -1,0 +1,18 @@
+import { Monoid } from 'fp-ts/Monoid';
+export declare function range(start: number, end: number): Iterable<number>;
+export declare function reversedRange(start: number, end: number): Iterable<number>;
+export declare function filter<A>(p: (a: A) => boolean): (iterable: Iterable<A>) => Iterable<A>;
+export declare function map<A, B>(f: (a: A) => B): (iterable: Iterable<A>) => Iterable<B>;
+export declare function zip<A, B>(iterableA: Iterable<A>): (iterableB: Iterable<B>) => Iterable<[A, B]>;
+export declare function unzip<A, B>(): (iterable: Iterable<[A, B]>) => Iterable<A | B>;
+export declare function merge<A, B>(iterableA: Iterable<A>): (iterableB: Iterable<B>) => Iterable<A | B>;
+export declare function then<A, B>(iterableB: Iterable<B>): (iterableA: Iterable<A>) => Generator<A | B, void, undefined>;
+export declare function after<A, B>(iterableA: Iterable<A>): (iterableB: Iterable<B>) => Generator<A | B, void, undefined>;
+export declare function index<A>(): (iterable: Iterable<A>) => Iterable<[A, number]>;
+export declare const take: <A>(n: number) => (iterableB: Iterable<A>) => Iterable<A>;
+export declare const drop: <A>(n: number) => (iterable: Iterable<A>) => Iterable<A>;
+export declare const head: <A>() => (iterableB: Iterable<A>) => Iterable<A>;
+export declare const tail: <A>() => (iterable: Iterable<A>) => Iterable<A>;
+export declare function fold<A>(M: Monoid<A>): (iterable: Iterable<A>) => Iterable<A>;
+export declare function unwrap<A>(): (iterable: Iterable<A>) => A;
+export declare function print<A>(label: string): (iterable: Iterable<A>) => void;
