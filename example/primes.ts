@@ -1,5 +1,6 @@
 import { flow, pipe } from 'fp-ts/function';
 import {
+    head,
     range,
     print,
     fold,
@@ -16,12 +17,17 @@ const { sqrt, floor } = Math;
 
 const sqrtInt = flow(sqrt, floor);
 
+const divides = (n) => (a) => n % a === 0;
+const not = (a) => !a;
+
+
 const isPrime = (n) =>
     n > 1 &&
     pipe(
         range(2, sqrtInt(n)),
-        map((a) => n % a !== 0),
+        map(flow(divides(n), not)),
         fold(MonoidAll),
+        head(),
         unwrap()
     );
 

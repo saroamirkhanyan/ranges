@@ -7,7 +7,9 @@
   "author": "Saro Amirkhanyan",
   "license": "MIT",
   "scripts": {
-    "build": "tsc"
+    "build": "tsc",
+    "build:example": "cd example && npm run build",
+    "build:all": "npm run build && npm run build:example"
   },
   "devDependencies": {
     "typescript": "^4.9.5"
