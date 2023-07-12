@@ -9,7 +9,7 @@ import {
 } from '@saroamirkhanyan/ranges';
 
 /**
- *  Example of iterating over itegers sequence
+ *  Example of iterating over integers sequence
  */
 
 const naturals = () => range(1, Infinity);
